@@ -15,7 +15,7 @@
 
 `timescale 1ns /100ps
 
-module alu;
+module alu_test;
 
 // Entradas
 reg [2:0] Codigo_OP;
@@ -30,7 +30,7 @@ wire banderaB;
 // Contable variable
 reg [2:0] cuenta = 3'd0;
 
-alu test (
+alu uut (
             .Codigo_OP(Codigo_OP),
             .Dato0(Dato0),
             .Dato1(Dato1),
@@ -53,7 +53,7 @@ initial begin
      Dato1 = 8'd55;
 
      // Cambio de operador
-     for (cuenta = 0; cuenta < 8; cuenta + 1'b01)
+  	for (cuenta = 0; cuenta < 8; cuenta + 3'd1)
      begin
          Codigo_OP = cuenta;
          #20;
