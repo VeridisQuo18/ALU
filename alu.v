@@ -59,72 +59,64 @@ always @ (Codigo_OP or Dato0 or Dato1)
 
 begin
     case (Codigo_OP)
-    SUM:
-    begin
-        Resultado = Dato0 + Dato1;
-        banderaA = Resultado[8];
-        banderaB = (Resultado == 16'b0);
-    end
-
-    RES:
-    begin
-        Resultado = Dato0 - Dato1;
-        banderaA = Resultado[8];
-        banderaB = (Resultado[8] == 16'b0);
-    end
-
-    PRO:
-    begin
-        Resultado = Dato0 * Dato1;
-        banderaB = (Resultado == 16'b0);
-    end
-
-    DIV:
-    begin
-        if (Dato1 != 8'b0) begin
-            Resultado = Dato0 / Dato1;
-            banderaB = (Resultado == 16b'0)
+        SUM: begin
+            Resultado = Dato0 + Dato1;
+            banderaA = Resultado[8];
+            banderaB = (Resultado == 16'b0);
         end
-        else begin
-            pass
+
+        RES: begin
+            Resultado = Dato0 - Dato1;
+            banderaA = Resultado[8];
+            banderaB = (Resultado[8] == 16'b0);
         end
-    end
 
-    MOD:
-    begin
-        if (Dato1 != 8'b0) begin
-            Resultado = Dato0 % Dato1;
-            banderaB = (Resultado == 16b'0)
+        PRO: begin
+            Resultado = Dato0 * Dato1;
+            banderaB = (Resultado == 16'b0);
         end
-        else begin
-            pass
+
+        DIV: begin
+            if (Dato1 != 8'b0) begin
+                Resultado = Dato0 / Dato1;
+                banderaB = (Resultado == 16b'0)
+            end
+            else begin
+                pass
+            end
         end
-    end
-    
-    AND:
-    begin
-        Resultado = Dato0 & Dato1;
-        banderaB = (Resultado == 16'b0);
-    end
 
-    OR:
-    begin
-        Resultado = Dato0 | Dato1;
-        banderaB = (Resultado == 16'b0);
-    end
+        MOD: begin
+            if (Dato1 != 8'b0) begin
+                Resultado = Dato0 % Dato1;
+                banderaB = (Resultado == 16b'0)
+            end
+            else begin
+                pass
+            end
+        end
+        
+        AND: begin
+            Resultado = Dato0 & Dato1;
+            banderaB = (Resultado == 16'b0);
+        end
 
-    XOR:
-    begin
-        Resultado = Dato0 ^ Dato1;
-        banderaB = (Resultado == 16'b0);
-    end
+        OR: begin
+            Resultado = Dato0 | Dato1;
+            banderaB = (Resultado == 16'b0);
+        end
 
-    default:
-    begin
-        Resultado = 16'b0;
-        banderaA, banderaB = 1'b0;
-    end
+        XOR: begin
+            Resultado = Dato0 ^ Dato1;
+            banderaB = (Resultado == 16'b0);
+        end
 
+        default: begin
+            Resultado = 16'b0;
+            banderaA = 1'b0;
+            banderaB = 1'b0;
+        end
+        end
     endcase
 end
 

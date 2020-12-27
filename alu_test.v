@@ -19,11 +19,13 @@ module alu;
 
 // Entradas
 reg [2:0] Codigo_OP;
-reg [7:0] Dato0, Dato1;
+reg [7:0] Dato0;
+reg [7:0] Dato1;
 
 // Salidas
 wire [15:0] Resultado;
-wire banderaA, banderaB;
+wire banderaA;
+wire banderaB;
 
 // Contable variable
 reg [2:0] cuenta = 3'd0;
@@ -40,7 +42,8 @@ alu test (
 initial begin
     // Iniciar entradas
      Codigo_OP = 3'b0;
-     Dato0, Dato1 = 8'd0;
+     Dato0 = 8'd0;
+     Dato1 = 8'd0;
 
      // Espera cada 100 nanosegundo par el reinicio global para terminar
      #100;
