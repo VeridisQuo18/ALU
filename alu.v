@@ -24,17 +24,16 @@
 // INICIA CODIFICACIÓN PRINCIPAL DE LA ALU
 module alu(
     input  [7:0] data0_i, data1_i,
-    input  [3:0] ctrl_i,
+    input  [2:0] ctrl_i,
     output [7:0] result_o   
 );
 
 // Wires
-wire [7:0] add_result   ;   
-wire [7:0] sub_result   ;   
+wire [7:0] suma_result   ;   
+wire [7:0] resta_result   ;   
 wire [7:0] prod_result  ;   
 wire [7:0] div_result   ;
 wire [7:0] mod_result   ;
-wire []
 
 // Instanciacion del sumador
 sumador_top sumador(
@@ -62,6 +61,13 @@ divisor_top divisor(
     .data0_i  ( data0_i     ), 
     .data1_i  ( data1_i     ),
     .result_o ( div_result  )   
+);
+
+// Instanciacion del divisor
+divisor_top mod(
+    .data0_i  ( data0_i     ), 
+    .data1_i  ( data1_i     ),
+    .result_o ( mod_result  )   
 );
 
 // Instanciacion del multiplexor
