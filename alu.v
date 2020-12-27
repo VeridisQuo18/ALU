@@ -1,6 +1,6 @@
 /* ================================================
  * Nombre del proyecto: Una ALU que opera con datos en 8-bit.
- * Archivo:             alu.v (1/...).
+ * Archivo:             alu.v (1/2).
  *
  * Facultad:            ... de Ingeniería en Electrónica y Comunicaciones.
  * Universidad:         Universidad Veracruzana.
@@ -11,73 +11,66 @@
  *                      Martagón García Julio César (juliomg458@gmail.com).
  *
  * Inspirado por el trabajo del Dr. Neiel I. Leyva Santes.
- * ================================================
- 
- Códigos de control
+ * ================================================*/
+
+`timescale 1ns /100ps
+
+// INICIA CODIFICACIÓN PRINCIPAL DE LA ALU
+module alu( Codigo_OP,
+            Dato0,
+            Dato1,
+            Resultado,
+            banderaA,
+            banderaB
+);
+
+// Entradas
+input  [2:0] Codigo_OP;
+input  [7:0] Dato0,
+             Dato1;
+
+// Salidas
+output reg [15:0] Resultado = 16'b0;
+
+// Banderas
+output reg banderaA = 1'b0,
+           banderaB = 1'b0;
+
+ /* Códigos de operación
     000 - Suma
     001 - Resta
     010 - Producto
     011 - División Entera
     100 - Modulo (%)
+    101 - AND
+    110 - OR
+    111 - XOR
 */
+parameter [2:0] SUM = 3'b000,
+                RES = 3'b001,
+                PRO = 3'b010,
+                DIV = 3'b011,
+                MOD = 3'b100,
+                AND = 3'b101,
+                OR  = 3'b110,
+                XOR = 3'b111;
 
-// INICIA CODIFICACIÓN PRINCIPAL DE LA ALU
-module alu(
-    input  [7:0] data0_i, data1_i,
-    input  [2:0] ctrl_i,
-    output [7:0] result_o   
-);
+always @ (Codigo_OP or Dato0 or Dato1)
 
-// Wires
-wire [7:0] suma_result   ;   
-wire [7:0] resta_result   ;   
-wire [7:0] prod_result  ;   
-wire [7:0] div_result   ;
-wire [7:0] mod_result   ;
+begin
+    case (Codigo_OP)
+    SUM:
+    begin
+        Resultado = Dato0 + Dato1;
+        banderaA = Resultado[8];
+        banderaB = (Resultado == 16'b0);
+    end
 
-// Instanciacion del sumador
-sumador_top sumador(
-    .data0_i  ( data0_i     ), 
-    .data1_i  ( data1_i     ),
-    .result_o ( sum_result  ) 
-);
+    RES:
+    begin
+        Resultado = Dato0 - Dato1;
+        banderaA = Resultado[8];
+        banderaB = (Resultado[8] == 16'b0);
+    end
 
-// Instanciacion del restador
-restador_top restador(
-    .data0_i  ( data0_i     ), 
-    .data1_i  ( data1_i     ),
-    .result_o ( res_result  )   
-);
-
-// Instanciacion del multiplicador
-multiplicador_top multiplicador(
-    .data0_i  ( data0_i     ), 
-    .data1_i  ( data1_i     ),
-    .result_o ( mult_result )   
-);
-
-// Instanciacion del divisor
-divisor_top divisor(
-    .data0_i  ( data0_i     ), 
-    .data1_i  ( data1_i     ),
-    .result_o ( div_result  )   
-);
-
-// Instanciacion del divisor
-divisor_top mod(
-    .data0_i  ( data0_i     ), 
-    .data1_i  ( data1_i     ),
-    .result_o ( mod_result  )   
-);
-
-// Instanciacion del multiplexor
-multiplexor_top multiplexor(
-    .portA_i  ( sum_result  ), 
-    .portB_i  ( res_result  ), 
-    .portC_i  ( mult_result ), 
-    .portD_i  ( div_result  ), 
-    .ctrl_i   ( ctrl_i      ), 
-    .data_o   ( result_o    )    
-);
-
-endmodule
+    PRO:
