@@ -55,7 +55,7 @@ parameter [2:0] SUM = 3'b000,
                 OR  = 3'b110,
                 XOR = 3'b111;
 
-always @ (Codigo_OP or Dato0 or Dato1)
+always @ (Codigo_OP or Dato0 or Dato1);
 
 begin
     case (Codigo_OP)
@@ -79,7 +79,7 @@ begin
         DIV: begin
             if (Dato1 != 8'b0) begin
                 Resultado = Dato0 / Dato1;
-                banderaB = (Resultado == 16b'0)
+                banderaB = (Resultado == 16b'0);
             end
             else begin
                 pass
@@ -89,7 +89,7 @@ begin
         MOD: begin
             if (Dato1 != 8'b0) begin
                 Resultado = Dato0 % Dato1;
-                banderaB = (Resultado == 16b'0)
+                banderaB = (Resultado == 16b'0);
             end
             else begin
                 pass
