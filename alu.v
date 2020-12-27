@@ -1,5 +1,5 @@
 /* ================================================
- * Nombre del proyecto: Una ALU con 5 operaciones de datos en 8-bit.
+ * Nombre del proyecto: Una ALU que opera con datos en 8-bit.
  * Archivo:             alu.v (1/...).
  *
  * Facultad:            ... de Ingeniería en Electrónica y Comunicaciones.
