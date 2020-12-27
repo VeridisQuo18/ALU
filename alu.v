@@ -74,3 +74,58 @@ begin
     end
 
     PRO:
+    begin
+        Resultado = Dato0 * Dato1;
+        banderaB = (Resultado == 16'b0);
+    end
+
+    DIV:
+    begin
+        if (Dato1 != 8'b0) begin
+            Resultado = Dato0 / Dato1;
+            banderaB = (Resultado == 16b'0)
+        end
+        else begin
+            pass
+        end
+    end
+
+    MOD:
+    begin
+        if (Dato1 != 8'b0) begin
+            Resultado = Dato0 % Dato1;
+            banderaB = (Resultado == 16b'0)
+        end
+        else begin
+            pass
+        end
+    end
+    
+    AND:
+    begin
+        Resultado = Dato0 & Dato1;
+        banderaB = (Resultado == 16'b0);
+    end
+
+    OR:
+    begin
+        Resultado = Dato0 | Dato1;
+        banderaB = (Resultado == 16'b0);
+    end
+
+    XOR:
+    begin
+        Resultado = Dato0 ^ Dato1;
+        banderaB = (Resultado == 16'b0);
+    end
+
+    default:
+    begin
+        Resultado = 16'b0;
+        banderaA, banderaB = 1'b0;
+    end
+
+    endcase
+end
+
+endmodule
