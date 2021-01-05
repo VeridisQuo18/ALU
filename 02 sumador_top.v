@@ -1,6 +1,6 @@
 /* ================================================
  * Nombre del proyecto: Una ALU que opera con datos en 8-bit.
- * Archivo:             02 sumador_top.v (1/...).
+ * Archivo:             02 sumador_top.v (2/...).
  *
  * Facultad:            ... de Ingeniería en Electrónica y Comunicaciones.
  * Universidad:         Universidad Veracruzana.
