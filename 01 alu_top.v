@@ -25,17 +25,63 @@
 
 // Unidad aritemica logica (ALU) de 5 operaciones, datos de 8 bits
 module alu_top(
-    input [2:0] Codigo_OP,
-    input [7:0] Dato0,
-    input [7:0] Dato1,
-    output [7:0] Resultado
+    input [2:0] ctrl_i,
+    input [7:0] data0_i,
+    input [7:0] data1_i,
+    output [7:0] result_o
 );
 // Cables internos
-wire [7:0] suma_resultado;
-wire [7:0] resta_resultado;
-wire [7:0] prod_resultado;
-wire [7:0] div_resultado;
-wire [7:0] mod_resultado;
+wire [7:0] sum_result;
+wire [7:0] res_result;
+wire [7:0] prod_result;
+wire [7:0] div_result;
+wire [7:0] mod_result;
 
+// Instancia del sumador
+sumador_top suma(
+    .data0_i (data0_i),
+    .data1_i (data1_i),
+    .result_o (sum_result)
+);
+
+// Instancia del restador
+restador_top resta(
+    .data0_i (data0_i),
+    .data1_i (data1_i),
+    .result_o (res_result)
+);
+
+// Instancia del productor
+productor_top suma(
+    .data0_i (data0_i),
+    .data1_i (data1_i),
+    .result_o (prod_result)
+);
+
+// Instancia del divisor
+divisor_top suma(
+    .data0_i (data0_i),
+    .data1_i (data1_i),
+    .result_o (div_result)
+);
+
+// Instancia del modulador
+modulador_top suma(
+    .data0_i (data0_i),
+    .data1_i (data1_i),
+    .result_o (mod_result)
+);
+
+// Instancia del multiplexor
+multiplexor_top multiplexor(
+    .portA_i (sum_result),
+    .portB_i (res_result),
+    .portC_i (prod_result),
+    .portD_i (div_result),
+    .portE_i (mod_result),
+    .ctrl_i (ctrl_i),
+    .data_o (result_o)
+
+);
 
 endmodule
