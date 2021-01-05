@@ -32,93 +32,10 @@ module alu_top(
 );
 // Cables internos
 wire [7:0] suma_resultado;
-wire [7:0] resta_
+wire [7:0] resta_resultado;
+wire [7:0] prod_resultado;
+wire [7:0] div_resultado;
+wire [7:0] mod_resultado;
 
-// Entradas
-input  [2:0] Codigo_OP;
-input  [7:0] Dato0,
-             Dato1;
-
-// Salidas
-output reg [15:0] Resultado = 16'b0;
-
-// Banderas
-output reg banderaA = 1'b0,
-           banderaB = 1'b0;
-
-
-parameter [2:0] SUM = 3'b000,
-                RES = 3'b001,
-                PRO = 3'b010,
-                DIV = 3'b011,
-                MOD = 3'b100,
-                AND = 3'b101,
-                OR  = 3'b110,
-                XOR = 3'b111;
-
-always @ (Codigo_OP or Dato0 or Dato1);
-
-begin
-    case (Codigo_OP)
-        SUM: begin
-            Resultado = Dato0 + Dato1;
-            banderaA = Resultado[8];
-            banderaB = (Resultado == 16'b0);
-        end
-
-        RES: begin
-            Resultado = Dato0 - Dato1;
-            banderaA = Resultado[8];
-            banderaB = (Resultado[8] == 16'b0);
-        end
-
-        PRO: begin
-            Resultado = Dato0 * Dato1;
-            banderaB = (Resultado == 16'b0);
-        end
-
-        DIV: begin
-            if (Dato1 != 8'b0) begin
-                Resultado = Dato0 / Dato1;
-                banderaB = (Resultado == 16b'0);
-            end
-            else begin
-                pass
-            end
-        end
-
-        MOD: begin
-            if (Dato1 != 8'b0) begin
-                Resultado = Dato0 % Dato1;
-                banderaB = (Resultado == 16b'0);
-            end
-            else begin
-                pass
-            end
-        end
-        
-        AND: begin
-            Resultado = Dato0 & Dato1;
-            banderaB = (Resultado == 16'b0);
-        end
-
-        OR: begin
-            Resultado = Dato0 | Dato1;
-            banderaB = (Resultado == 16'b0);
-        end
-
-        XOR: begin
-            Resultado = Dato0 ^ Dato1;
-            banderaB = (Resultado == 16'b0);
-        end
-
-        default: begin
-            Resultado = 16'b0;
-            banderaA = 1'b0;
-            banderaB = 1'b0;
-        end
-        end
-    endcase
-end
 
 endmodule
