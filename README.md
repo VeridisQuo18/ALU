@@ -9,3 +9,5 @@ El respositorio que ves ahora mismo, permite ver el desarrollo de una Unidad Ari
 <b>Martagón García<b> Julio César<br>
 
 ## Datos de la institución
+<b>Universidad Veracruzana<b><br>
+<b>[Facultad de Ingeniería en Electrónica y Comunicaciones] (https://www.uv.mx/pozarica/fiec/)<b><br>
