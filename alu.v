@@ -1,6 +1,6 @@
 /* ================================================
  * Nombre del proyecto: Una ALU que opera con datos en 8-bit.
- * Archivo:             alu.v (1/2).
+ * Archivo:             alu_top.v (1/...).
  *
  * Facultad:            ... de Ingeniería en Electrónica y Comunicaciones.
  * Universidad:         Universidad Veracruzana.
@@ -15,8 +15,16 @@
 
 `timescale 1ns /100ps
 
-// INICIA CODIFICACIÓN PRINCIPAL DE LA ALU
-module alu_(
+ /* Códigos de operación
+    000 - Suma
+    001 - Resta
+    010 - Producto
+    011 - División Entera
+    100 - Modulo (%)
+*/
+
+// Unidad aritemica logica (ALU) de 5 operaciones, datos de 8 bits
+module alu_top(
     input [2:0] Codigo_OP,
     input [7:0] Dato0,
     input [7:0] Dato1,
@@ -24,7 +32,7 @@ module alu_(
 );
 // Cables internos
 wire [7:0] suma_resultado;
-wire [7:0] 
+wire [7:0] resta_
 
 // Entradas
 input  [2:0] Codigo_OP;
@@ -38,13 +46,7 @@ output reg [15:0] Resultado = 16'b0;
 output reg banderaA = 1'b0,
            banderaB = 1'b0;
 
- /* Códigos de operación
-    000 - Suma
-    001 - Resta
-    010 - Producto
-    011 - División Entera
-    100 - Modulo (%)
-*/
+
 parameter [2:0] SUM = 3'b000,
                 RES = 3'b001,
                 PRO = 3'b010,
