@@ -52,21 +52,21 @@ restador_top resta(
 );
 
 // Instancia del productor
-productor_top suma(
+productor_top producto(
     .data0_i (data0_i),
     .data1_i (data1_i),
     .result_o (prod_result)
 );
 
 // Instancia del divisor
-divisor_top suma(
+divisor_top division(
     .data0_i (data0_i),
     .data1_i (data1_i),
     .result_o (div_result)
 );
 
 // Instancia del modulador
-modulador_top suma(
+modulador_top mod(
     .data0_i (data0_i),
     .data1_i (data1_i),
     .result_o (mod_result)
