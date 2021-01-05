@@ -81,7 +81,6 @@ multiplexor_top multiplexor(
     .portE_i (mod_result),
     .ctrl_i (ctrl_i),
     .data_o (result_o)
-
 );
 
 endmodule
