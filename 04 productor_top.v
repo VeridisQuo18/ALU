@@ -1,6 +1,6 @@
 /* ================================================
  * Nombre del proyecto: Una ALU que opera con datos en 8-bit.
- * Archivo:             04 productor_top.v (4/...).
+ * Archivo:             04 productor_top.v (4/7).
  *
  * Facultad:            ... de Ingeniería en Electrónica y Comunicaciones.
  * Universidad:         Universidad Veracruzana.
