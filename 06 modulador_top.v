@@ -1,6 +1,6 @@
 /* ================================================
  * Nombre del proyecto: Una ALU que opera con datos en 8-bit.
- * Archivo:             06 modulador_top.v (6/...).
+ * Archivo:             06 modulador_top.v (6/7).
  *
  * Facultad:            ... de Ingeniería en Electrónica y Comunicaciones.
  * Universidad:         Universidad Veracruzana.
