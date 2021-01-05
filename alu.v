@@ -16,13 +16,15 @@
 `timescale 1ns /100ps
 
 // INICIA CODIFICACIÓN PRINCIPAL DE LA ALU
-module alu( Codigo_OP,
-            Dato0,
-            Dato1,
-            Resultado,
-            banderaA,
-            banderaB
+module alu_(
+    input [2:0] Codigo_OP,
+    input [7:0] Dato0,
+    input [7:0] Dato1,
+    output [7:0] Resultado
 );
+// Cables internos
+wire [7:0] suma_resultado;
+wire [7:0] 
 
 // Entradas
 input  [2:0] Codigo_OP;
@@ -42,9 +44,6 @@ output reg banderaA = 1'b0,
     010 - Producto
     011 - División Entera
     100 - Modulo (%)
-    101 - AND
-    110 - OR
-    111 - XOR
 */
 parameter [2:0] SUM = 3'b000,
                 RES = 3'b001,
