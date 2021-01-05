@@ -4,10 +4,10 @@ El respositorio que ves ahora mismo, permite ver el desarrollo de una Unidad Ari
 
 ## Autores
 <b>Barrientos Casanova</b> Paulo Abraham<br>
-<b>Garrido Fernández<b> Alexis Alfonso<br>
-<b>Loyda de León<b> Cristian Armando<br>
-<b>Martagón García<b> Julio César<br>
+<b>Garrido Fernández</b> Alexis Alfonso<br>
+<b>Loyda de León</b> Cristian Armando<br>
+<b>Martagón García</b> Julio César<br>
 
 ## Datos de la institución
 <b>Universidad Veracruzana<b><br>
-<b>[Facultad de Ingeniería en Electrónica y Comunicaciones] (https://www.uv.mx/pozarica/fiec/)<b><br>
+<b>[Facultad de Ingeniería en Electrónica y Comunicaciones](https://www.uv.mx/pozarica/fiec/)</b>.
