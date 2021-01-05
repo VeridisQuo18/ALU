@@ -12,3 +12,13 @@
  *
  * Inspirado por el trabajo del Dr. Neiel I. Leyva Santes.
  * ================================================*/
+
+module sumador_top(
+    input  [7:0] data0_i    ,
+    input  [7:0] data1_i    ,
+    output [7:0] result_o   
+);
+
+assign result_o = data0_i + data1_i ;
+
+endmodule
