@@ -15,74 +15,71 @@
 
 module alu_test;
 
+// Iniciar registros y salidas
+reg [7:0] data0; 
+reg [7:0] data1;
+reg [2:0] ctrl;  
+wire [7:0] result;
 
-// Entradas para el modulo a prueba 
-reg  [7:0] data0  ; 
-reg  [7:0] data1  ;
-reg  [2:0] ctrl   ; 
-
-// Salidas del modulo a prueba 
-wire [7:0] result ;
-
-
-// Instanciacion del modulo a prueba
+// Instancia de alu_top
 alu_top alu(
-    .data0_i  ( data0  ), 
-    .data1_i  ( data1  ),
-    .ctrl_i   ( ctrl   ), 
-    .result_o ( result )
+    .ctrl_i (ctrl),
+    .data0_i (data0),
+    .data1_i (data1),
+    .result_o (result)
 );
 
-// Pruebas
+// Iniciar pruebas
 initial begin
-// Dump waves
+
+// Volcados
 $dumpfile("dump.vcd");
-$dumpvars(1,alu_tb);
+$dumpvars(1, alu_test);
 
-// reset - todas las señales de entrada a 0
-$display("-- start simulation --");
-data0 = 4'h0;
-data1 = 4'h0;
-ctrl  = 3'b0;
+// Reinicio de Señales
+$display("-- Inicia Simulación --");
+data0 = 8'd0;
+data1 = 8'd0;
+ctrl  = 3'b000;
 
 #50 //delay
-data0 = 4'h6;
-data1 = 4'h2;
-ctrl  = 2'b00;
-$display("Resultado : %h", result  );
+data0 = 8'd200;
+data1 = 8'd23;
+ctrl  = 3'b000;
+$display("Resultado de suma: %h", result);
 $display("--");
  
 #50 //delay
-data0 = 4'h6;
-data1 = 4'h2;
-ctrl  = 2'b01;
-$display("Resultado : %h", result  );
+data0 = 8'd23;
+data1 = 8'd21;
+ctrl  = 3'b001;
+$display("Resultado de res: %h", result);
 $display("--");
  
 #50 //delay
-data0 = 4'h6;
-data1 = 4'h2;
-ctrl  = 2'b10;
-$display("Resultado : %h", result  );
+data0 = 8'd10;
+data1 = 8'd12;
+ctrl  = 3'b010;
+$display("Resultado de producto: %h", result);
 $display("--");
 
 #50 //delay
-data0 = 4'h6;
-data1 = 4'h2;
-ctrl  = 2'b11;
-$display("Resultado : %h", result  );
+data0 = 8'd10;
+data1 = 8'd2;
+ctrl  = 3'b011;
+$display("Resultado de division: %h", result);
 $display("--");
 
 #50 //delay
-data0 = 4'h6;
-data1 = 4'h2;
-ctrl  = 2'b11;
-$display("Resultado : %h", result  );
+data0 = 8'd9;
+data1 = 8'd3;
+ctrl  = 3'b100;
+$display("Resultado de modulo: %h", result);
 $display("--");
 
-#50 //delay
-$display("-- end simulation --");
 
+#50 //delay
+$display("-- Fin de la Simulación --");
 end
 
 endmodule
