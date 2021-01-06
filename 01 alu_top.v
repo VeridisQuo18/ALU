@@ -28,6 +28,7 @@ module alu_top(
     input [7:0] data1_i,
     output [7:0] result_o
 );
+
 // Cables internos
 wire [7:0] sum_result;
 wire [7:0] res_result;

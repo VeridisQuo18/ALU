@@ -40,41 +40,41 @@ $dumpvars(1, alu_test);
 $display("-- Inicia Simulación --");
 data0 = 8'd0;
 data1 = 8'd0;
-ctrl  = 3'b000;
+ctrl  = 3'b0;
 
 #50 //delay
-data0 = 8'd200;
-data1 = 8'd23;
+data0 = 8'd;
+data1 = 8'd;
 ctrl  = 3'b000;
-$display("Resultado de suma: %h", result);
+$display("Resultado de suma: %d", result);
 $display("--");
  
 #50 //delay
-data0 = 8'd23;
-data1 = 8'd21;
+data0 = 8'd;
+data1 = 8'd;
 ctrl  = 3'b001;
-$display("Resultado de res: %h", result);
+$display("Resultado de resta: %d", result);
 $display("--");
  
 #50 //delay
-data0 = 8'd10;
-data1 = 8'd12;
+data0 = 8'd;
+data1 = 8'd;
 ctrl  = 3'b010;
-$display("Resultado de producto: %h", result);
+$display("Resultado de producto: %d", result);
 $display("--");
 
 #50 //delay
-data0 = 8'd10;
-data1 = 8'd2;
+data0 = 8'd;
+data1 = 8'd;
 ctrl  = 3'b011;
-$display("Resultado de division: %h", result);
+$display("Resultado de division: %d", result);
 $display("--");
 
 #50 //delay
-data0 = 8'd9;
-data1 = 8'd3;
+data0 = 8'd;
+data1 = 8'd;
 ctrl  = 3'b100;
-$display("Resultado de modulo: %h", result);
+$display("Resultado de modulo: %d", result);
 $display("--");
 
 
