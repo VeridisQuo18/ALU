@@ -10,6 +10,6 @@ El respositorio que ves ahora mismo, permite ver el desarrollo de una Unidad Ari
 
 ## Datos de la institución
 <b>Universidad Veracruzana<b><br>
-<b>[Facultad de Ingeniería en Electrónica y Comunicaciones, Poza Rica](https://www.uv.mx/pozarica/fiec/)</b>.
+<b>[Facultad de Ingeniería en Electrónica y Comunicaciones, Poza Rica](https://www.uv.mx/pozarica/fiec/)</b><br>.
 <b>Experiencia Educativa / Materia</b>: Programación de Microprocesadores y Microcontroladores.<br>
 <b>Docente / Facilitador</b>: Dr. Alfredo Cristóbal Salas.
