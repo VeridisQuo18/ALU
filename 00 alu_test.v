@@ -43,7 +43,7 @@ $dumpvars(1,alu_tb);
 $display("-- start simulation --");
 data0 = 4'h0;
 data1 = 4'h0;
-ctrl  = 2'b00;
+ctrl  = 3'b0;
 
 #50 //delay
 data0 = 4'h6;
