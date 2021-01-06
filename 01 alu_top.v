@@ -13,8 +13,6 @@
  * Inspirado por el trabajo del Dr. Neiel I. Leyva Santes.
  * ================================================*/
 
-`timescale 1ns /100ps
-
  /* Códigos de operación
     000 - Suma
     001 - Resta
