@@ -19,11 +19,6 @@
      output [7:0] result_o
  );
 
- if (data0_i > 0 && data1_i > 0 ) begin
-     assign result_o = data0_i / data1_i;
- end
- else begin
-     assign result_o = 0;
- end
-
+ assign result_o = data0_i / data1_i;
+ 
  endmodule
