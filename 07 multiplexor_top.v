@@ -25,15 +25,15 @@ module multiplexor_top(
 
 always @ * begin
     case (ctrl_i)
-        2'b000: 
+        3'b000: 
             data_o = portA_i;
-        2'b001: 
+        3'b001: 
             data_o = portB_i;
-        2'b010: 
+        3'b010: 
             data_o = portC_i;
-        2'b011: 
+        3'b011: 
             data_o = portD_i;
-        2'b100: 
+        3'b100: 
             data_o = portE_i;
         default: 
             data_o = portA_i;
