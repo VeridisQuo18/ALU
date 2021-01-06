@@ -21,7 +21,7 @@ reg [7:0] data1;
 reg [2:0] ctrl;  
 wire [7:0] result;
 
-// Instancia de alu_top
+// Instancia del módulo alu_top
 alu_top alu(
     .ctrl_i (ctrl),
     .data0_i (data0),
@@ -79,7 +79,7 @@ $display("--");
 
 
 #50 //delay
-$display("-- Fin de la Simulación --");
+$display("-- Fin de Simulación --");
 end
 
 endmodule
