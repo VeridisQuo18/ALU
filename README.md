@@ -8,7 +8,7 @@ En el asunto de simulación, elegimos Icarus Verilog 0.9.7, habilitamos la opcio
 En el archivo release, encontrarás el código fuente, el archivo de volcado y la gráfica de señales. Mismos que puedes ver en los archivos de este repositorio.
 
 ## Autores
-[<b>Barrientos Casanova</b> Paulo Abraham](https://github.com/pauloabr18).<br>
+[<b>Barrientos Casanova</b> Paulo Abraham](https://github.com/VeridisQuo18).<br>
 <b>Garrido Fernández</b> Alexis Alfonso.<br>
 <b>Loyda de León</b> Cristian Armando.<br>
 <b>Martagón García</b> Julio César.<br>
